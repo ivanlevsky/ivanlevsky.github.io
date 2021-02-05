@@ -38,4 +38,4 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 
 
 Test Link  
-[appium](https://ivanlevsky.github.io/doc/testing/appium)
+[appium doc](https://ivanlevsky.github.io/doc/testing/appium)
