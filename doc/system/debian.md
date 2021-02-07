@@ -23,5 +23,6 @@ systemctl get-default
    nmcli networking off
    nmcli networking on
 ```
+ip a
 Reference:  
 https://wiki.debian.org/ReduceDebian
