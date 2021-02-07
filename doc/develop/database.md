@@ -6,11 +6,13 @@ CREATE USER 'username'@'host' IDENTIFIED BY 'password';
     GRANT privileges ON databasename.tablename TO 'username'@'host'
     FLUSH PRIVILEGES;
 ```  
+12
 ```mysql
 CREATE USER 'username'@'host' IDENTIFIED BY 'password';
     GRANT privileges ON databasename.tablename TO 'username'@'host'
     FLUSH PRIVILEGES;
 ```  
+34
 ```mariadb
 CREATE USER 'username'@'host' IDENTIFIED BY 'password';
     GRANT privileges ON databasename.tablename TO 'username'@'host'
