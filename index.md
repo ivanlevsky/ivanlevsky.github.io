@@ -37,6 +37,6 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
 
 
-Test Link  
-[appium doc](https://ivanlevsky.github.io/doc/testing/appium)  
-[appium doc mod](doc/testing/appium)
+Test Link    
+[appium doc mod](doc/testing/appium.md)  
+[debian_doc](doc/system/debian.md)
