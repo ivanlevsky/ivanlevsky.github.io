@@ -1,4 +1,4 @@
-##Debian Reduce System Size
+## Debian Reduce System Size
 
 1. Remove non-critical packages
 ![remove packages](../../images/system/debian/remove_packages.png "remove packages")  
@@ -9,4 +9,4 @@
 
 
 Reference:  
-[1] https://wiki.debian.org/ReduceDebian
+https://wiki.debian.org/ReduceDebian
