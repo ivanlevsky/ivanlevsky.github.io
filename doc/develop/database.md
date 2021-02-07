@@ -5,6 +5,16 @@
 CREATE USER 'username'@'host' IDENTIFIED BY 'password';
     GRANT privileges ON databasename.tablename TO 'username'@'host'
     FLUSH PRIVILEGES;
+```  
+```mysql
+CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+    GRANT privileges ON databasename.tablename TO 'username'@'host'
+    FLUSH PRIVILEGES;
+```  
+```mariadb
+CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+    GRANT privileges ON databasename.tablename TO 'username'@'host'
+    FLUSH PRIVILEGES;
 ```
     
 command param
