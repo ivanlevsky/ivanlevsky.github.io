@@ -10,7 +10,7 @@
 ## Close Gnome Desktop  
 login into tty3 text terminal mode (press `CTRL+ALT+F3`)  
 
-```shell script
+```shell
 #stop gnome graphic login program  
 systemctl stop gdm
 #check gdm status
@@ -21,17 +21,17 @@ systemctl get-default
 
 ## Network  
 reset net ip
-```shell script
+```shell
 nmcli networking off
 nmcli networking on
 ```
 check ip
-```shell script
+```shell
 ip a
 ```
 
 ftp server setup
-```shell script
+```shell
 sudo apt install vsftpd
 #backup vsftp conf file
 sudo /etc/vsftpd.conf /etc/vsftpd.conf.bak
@@ -73,7 +73,7 @@ sudo systemctl status vsftpd
 ```
 
 
-Reference:  
-https://wiki.debian.org/ReduceDebian  
-https://wiki.debian.org/FTP  
-https://wiki.debian.org/vsftpd  
+## Reference:  
+[https://wiki.debian.org/ReduceDebian](https://wiki.debian.org/ReduceDebian)  
+[https://wiki.debian.org/FTP ](https://wiki.debian.org/FTP)  
+[https://wiki.debian.org/vsftpd](https://wiki.debian.org/vsftpd)  
