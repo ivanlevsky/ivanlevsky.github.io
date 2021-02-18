@@ -3,7 +3,8 @@
 ##### create user and set privilege  
 ```sql
 CREATE USER 'username'@'host' IDENTIFIED BY 'password';
-GRANT privileges ON databasename.tablename TO 'username'@'host' FLUSH PRIVILEGES;
+GRANT privileges ON databasename.tablename TO 'username'@'host'  
+FLUSH PRIVILEGES;
 ```  
 ##### examples  
 ```sql
