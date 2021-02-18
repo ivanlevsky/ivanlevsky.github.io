@@ -38,6 +38,7 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 
 
 Test Link    
-[appium doc mod](doc/testing/appium.md)  
+[appium doc](doc/testing/appium.md)  
 [debian_doc](doc/system/debian.md)  
-[database_doc](doc/develop/database.md)
+[database_doc](doc/develop/database.md)  
+[jekyll_doc](doc/github/jekyll.md)  

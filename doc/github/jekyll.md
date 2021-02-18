@@ -1,0 +1,61 @@
+### Jekyll Setup
+***
+install jekyll prerequisites  
+![install_prerequisites](../../images/github/jekyll/install_prerequisites.png)  
+check prerequisites installed
+```shell
+#check ruby, rubygems, gcc and make installed
+ruby-v
+gem-v
+gcc -v
+g++ -v
+make -v
+```
+install jekyll bundle  
+![install_jekyll_and_bundler](../../images/github/jekyll/install_jekyll_and_bundler.png)  
+create jekyll project  
+![create_jekyll_project](../../images/github/jekyll/create_jekyll_project.png)  
+run jekyll server
+```shell 
+cd myblog
+#generate new html pages
+bundle exec jekyll build
+#run in http://localhost:4000
+bundle exec jekyll serve
+#run in http://192.168.43.127:4000/
+bundle exec jekyll serve --host 192.168.43.127 --port 4000
+```
+![run_jekyll_server](../../images/github/jekyll/run_jekyll_server.png)  
+
+install jekyll theme, use `gem install github-pages`   
+![install_github_pages](../../images/github/jekyll/install_github_pages.png)
+
+
+### Debug Local Page
+***
+install git and clone jekyll github pages repo in jekyll server
+```shell
+sudo apt-get install git
+git clone https://github.com/ivanlevsky/ivanlevsky.github.io.git
+```
+
+generate gem file, use `bundle init`
+![jekyll_bundle_init](../../images/github/jekyll/jekyll_bundle_init.png)
+
+upload local files to remote Jekyll Server  
+cd local github pages path `D:\..\IdeaProjects\ivanlevsky_github_io\`
+
+```shell
+sftp zelda@xxx.xxx.xxx.xxx
+cd /home/zelda/Downloads/ivanlevsky.github.io
+put -r ../index.md
+cd /home/zelda/Downloads/ivanlevsky.github.io/doc
+put -r ../doc
+cd /home/zelda/Downloads/ivanlevsky.github.io/images
+put -r ../images
+```
+
+Reference:  
+[https://github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)  
+[https://jekyllrb.com/docs/installation/](https://jekyllrb.com/docs/installation/)  
+[https://github.com/pages-themes/cayman](https://github.com/pages-themes/cayman)  
