@@ -91,8 +91,8 @@ grant all privileges on all tables in schema public to user;
 mariadb(mysql) | postgresql
 ---|---
 show databases|`\l` or `select * from pg_database`
-use mysql|`\c database_name`
+select database|`\c database_name`
 show tables|`\d` or `\dt` or `select table_name from information_schema.tables where table_schema = 'public';`
-use mysql|`\d table_name` or `select column_name,data_type from information_schema.columns where table_name = 'table_name';`
+describe table|`\d table_name` or `select column_name,data_type from information_schema.columns where table_name = 'table_name';`
 
 
