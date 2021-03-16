@@ -48,11 +48,11 @@ cd local github pages path `D:\..\IdeaProjects\ivanlevsky_github_io\`
 ```shell
 sftp zelda@xxx.xxx.xxx.xxx
 cd /home/zelda/Downloads/ivanlevsky.github.io
-put -r ../index.md
+put -r ./index.md
 cd /home/zelda/Downloads/ivanlevsky.github.io/doc
-put -r ../doc
+put -r ./doc
 cd /home/zelda/Downloads/ivanlevsky.github.io/images
-put -r ../images
+put -r ./images
 ```
 
 Reference:  
