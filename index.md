@@ -42,3 +42,4 @@ Test Link
 [debian_doc](doc/system/debian.md)  
 [database_doc](doc/develop/database.md)  
 [jekyll_doc](doc/github/jekyll.md)  
+[machine_learning_doc](doc/machine_learning/machine_learning.md)  
