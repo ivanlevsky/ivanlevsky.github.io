@@ -1,3 +1,4 @@
+## chapter 1 exercises
 #### 1. How would you define Machine Learning?  
 Machine Learning is about building systems that can learn from data. 
 Learning means getting better at some task, given some performance measure.
