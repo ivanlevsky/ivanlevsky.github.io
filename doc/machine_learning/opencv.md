@@ -1,4 +1,4 @@
-### SET UP OPENCV
+### SETUP OPENCV
 ***
 open [official release site](https://opencv.org/releases/)  
 click [windows](https://sourceforge.net/projects/opencvlibrary/files/4.5.1/opencv-4.5.1-vc14_vc15.exe/download) 
@@ -14,6 +14,7 @@ add python opencv library in pip
 ```shell
 pip install opencv-contrib-python
 ```
+
 
 
 
