@@ -44,3 +44,5 @@ Test Link
 [jekyll_doc](doc/github/jekyll.md)  
 [machine_learning_doc](doc/machine_learning/machine_learning.md)  
 [opencv_doc](doc/machine_learning/opencv.md)  
+[jmeter_doc](doc/testing/jmeter.md)  
+[docker_doc](doc/cicd/docker.md) 
