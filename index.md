@@ -43,3 +43,4 @@ Test Link
 [database_doc](doc/develop/database.md)  
 [jekyll_doc](doc/github/jekyll.md)  
 [machine_learning_doc](doc/machine_learning/machine_learning.md)  
+[opencv_doc](doc/machine_learning/opencv.md)  
