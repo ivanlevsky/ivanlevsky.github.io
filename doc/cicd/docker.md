@@ -35,4 +35,24 @@ other install method check:
 
 Verify that Docker Engine is installed correctly by running the hello-world image  
 ![check_docker_cmd](../../images/cicd/docker/check_docker_cmd.png)
-![run_docker_hello_world](../../images/cicd/docker/run_docker_hello_world.png)
+![run_docker_hello_world](../../images/cicd/docker/run_docker_hello_world.png)  
+
+### Use Docker Command
+***
+```shell
+#list all images -a
+
+#list all containers
+sudo docker ps -a
+sudo docker container ls -a
+
+#delete a container
+sudo docker rm -f 
+
+
+```
+
+### Reference:    
+[docker commands](https://docs.docker.com/engine/reference/run/)  
+[docker_lauguage_set](https://docs.docker.com/language/)  
+[docker_cicd](https://docs.docker.com/ci-cd/best-practices/)  
