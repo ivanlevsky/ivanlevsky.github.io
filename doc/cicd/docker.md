@@ -40,7 +40,8 @@ Verify that Docker Engine is installed correctly by running the hello-world imag
 ### Use Docker Command
 ***
 ```shell
-#list all images -a
+#list all images
+sudo docker images -a
 
 #list all containers
 sudo docker ps -a
