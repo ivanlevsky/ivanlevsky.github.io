@@ -1,5 +1,5 @@
 ## Debian Reduce System Size
-
+***
 1. Remove non-critical packages  
 ![remove packages](../../images/system/debian/remove_packages.png "remove packages")  
 2. Replace packages with smaller equivalents  
@@ -7,7 +7,8 @@
 3. Remove other language man files  
 ![replace language man files](../../images/system/debian/remove_language_man_files.png "remove language man files")  
 
-## Close Gnome Desktop  
+## Close Gnome Desktop
+***  
 login into tty3 text terminal mode (press `CTRL+ALT+F3`)  
 
 ```shell
@@ -20,6 +21,7 @@ systemctl get-default
 ```
 
 ## Network  
+***
 reset net ip
 ```shell
 nmcli networking off
@@ -71,6 +73,21 @@ sudo cat /etc/vsftpd.conf | grep -v "^#"
 sudo systemctl restart vsftpd
 sudo systemctl status vsftpd
 ```
+
+## System
+***
+restart, stop, start, check status services
+```shell
+sudo service mysqld restart
+sudo service mysqld stop
+sudo service mysqld start
+sudo service mysqld status
+
+sudo systemctl restart mysqld
+sudo systemctl stop mysqld
+sudo systemctl start mysqld
+sudo systemctl status mysqld
+```  
 
 
 ## Reference:  
