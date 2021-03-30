@@ -20,7 +20,7 @@ download docker-ce-cli deb
 wget https://download.docker.com/linux/debian/dists/buster/pool/stable/amd64/docker-ce-cli_20.10.5~3-0~debian-buster_amd64.deb
 ```
 
-install `containerd.io` , `docker-ce-cli` before install deb file, 
+install `containerd.io` , `docker-ce-cli` before install docker deb file, 
 ```shell
 sudo dpkg -i /home/zelda/Downloads/containerd.io_1.4.4-1_amd64.deb
 sudo dpkg -i /home/zelda/Downloads/docker-ce-cli_20.10.5_3-0_debian-buster_amd64.deb

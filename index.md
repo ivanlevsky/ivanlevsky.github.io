@@ -37,12 +37,26 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
 
 
-Test Link    
-[appium doc](doc/testing/appium.md)  
-[debian_doc](doc/system/debian.md)  
+### Test Link  
+***  
+cicd  
+[docker_doc](doc/cicd/docker.md)  
+[jenkins_doc](doc/cicd/jenkins.md)    
+  
+develop  
 [database_doc](doc/develop/database.md)  
+[java_doc](doc/develop/java.md)   
+  
+system   
+[debian_doc](doc/system/debian.md)  
+  
+github  
 [jekyll_doc](doc/github/jekyll.md)  
+  
+machine learning  
 [machine_learning_doc](doc/machine_learning/machine_learning.md)  
 [opencv_doc](doc/machine_learning/opencv.md)  
+  
+testing  
+[appium doc](doc/testing/appium.md)  
 [jmeter_doc](doc/testing/jmeter.md)  
-[docker_doc](doc/cicd/docker.md) 
