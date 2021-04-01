@@ -94,5 +94,6 @@ A: 1.manual select chromedriver:
 see `appium_utils` comment
 
 reference links:  
-[https://appium.io/docs/en/about-appium/getting-started/](https://appium.io/docs/en/about-appium/getting-started/)  
-[https://developer.android.com/studio/command-line/sdkmanager](https://developer.android.com/studio/command-line/sdkmanager)  
+[useful adb commands](https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8)  
+[appium tutorial doc](https://appium.io/docs/en/about-appium/getting-started/)  
+[android sdkmanager offcial site](https://developer.android.com/studio/command-line/sdkmanager)  
