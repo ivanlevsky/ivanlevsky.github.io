@@ -183,7 +183,31 @@ x=MsgBox("a minus 1 every loop："&strtext ,0,"Do Loop Function")
 ```
 ![do_loop](../../images/develop/vbscript/do_loop.png)
 
+### Object Function
+***
+```vb
+'GetObject is a wscript method, Get an Automation object
+Set fileObject = GetObject("D:\1.xlsx")
+Set cell = fileObject.Sheets(1).Cells(1,1)
+x=MsgBox(cell,4,"Read Excel Cell")
+```
+![getobject](../../images/develop/vbscript/getobject.png)
 
+```vb
+'Create an automation object / run an external command
+'write text file D:\1.txt with content "123abc" 
+Set objFileToWrite = CreateObject("Scripting.FileSystemObject").OpenTextFile("D:\1.txt",2,true)
+objFileToWrite.WriteLine("123abc")
+objFileToWrite.Close
+Set objFileToWrite = Nothing
+```
+
+```vb
+'Return the largest subscript for an array dimension
+a = Array("abele","iefjofe","jlkkl")
+x = MsgBox("a largest dimension:"& ubound(a),4,"Ubound Function")
+```
+![ubound](../../images/develop/vbscript/ubound.png)
 
 
 
