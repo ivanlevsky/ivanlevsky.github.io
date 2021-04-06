@@ -53,7 +53,42 @@ xx = MsgBox(Now,4,"Now Function")
 'The current system time
 xx = MsgBox(Time,4,"Time Function")
 ```
-![time](../../images/develop/vbscript/time.png)  
+![time](../../images/develop/vbscript/time.png) 
+
+### String Function
+***
+```vb
+'Find one string within another
+a = "123 456 abc"
+xx = MsgBox(InStr(a,"a") ,4,"Instr Function")
+```
+![instr](../../images/develop/vbscript/instr.png)  
+```vb
+'Return a mid-section from a string
+a = "123 456 abc"
+xx = MsgBox(Mid(a,5,3) ,4,"Mid Function")
+```
+![mid](../../images/develop/vbscript/mid.png) 
+```vb
+'Return the leftmost len characters of string
+a = "123 456 abc"
+xx = MsgBox(Left(a,3) ,4,"Left Function")
+```
+![left](../../images/develop/vbscript/left.png)
+```vb
+'Return the rightmost len characters of string
+a = "123 456 abc"
+xx = MsgBox(Right(a,3) ,4,"Right Function")
+```
+![right](../../images/develop/vbscript/right.png)
+```vb
+'Find and replace text
+a = "123 456 abc"
+xx = MsgBox(Replace(a, "abc","edf") ,4,"Replace Function")
+```
+![replace](../../images/develop/vbscript/replace.png)
+
+
 
 Reference:  
 https://www.informit.com/articles/article.aspx?p=1187429&seqNum=5
