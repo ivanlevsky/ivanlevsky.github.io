@@ -127,11 +127,61 @@ strtext = strtext &("Friday")
 Case else
 strtext = strtext &("Saturday")
 End Select
-
 x=MsgBox("Today is？"&chr(10)& strtext )
 ```
 ![switch_case](../../images/develop/vbscript/switch_case.png)
 
+### Loop Function
+***
+```vb
+'Repeat a block of statements a given number of times
+'Step to skip number every loop
+'Exit For to end loop
+strtext = "" 
+For i = 1 To 5 Step 2
+if i = 4 Then Exit For
+strtext = strtext &chr(10)& i
+Next
+x=MsgBox("count one to five："&strtext ,0,"For Next Function")
+```
+![for_next](../../images/develop/vbscript/for_next.png)
+
+```vb
+'Loop through the items in a collection or array
+strtext = "" 
+Dim country(2)
+country(0)="china"
+country(1)="japan"
+country(2)="south korea"
+For Each c In country
+  strtext = strtext & c & ","
+Next
+x=MsgBox("list all countries："&strtext ,0,"For Each Function")
+```
+![for_each](../../images/develop/vbscript/for_each.png)
+
+```vb
+'Repeat a block of statements
+a = 5
+strtext = "" 
+Do While a>0
+a = a -1
+strtext = strtext & a &","
+Loop
+x=MsgBox("a minus 1 every loop："&strtext ,0,"Do Loop Function")
+
+'codes equal
+
+a = 5
+strtext = "" 
+Do 
+a = a -1
+strtext = strtext & a &","
+Loop Until a<1
+x=MsgBox("a minus 1 every loop："&strtext ,0,"Do Loop Function")
+
+```
+![do_loop](../../images/develop/vbscript/do_loop.png)
 
 
 
