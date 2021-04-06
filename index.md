@@ -50,6 +50,7 @@ develop
   
 system   
 [debian_doc](doc/system/debian.md)  
+[windows_doc](doc/system/windows.md)
   
 github  
 [jekyll_doc](doc/github/jekyll.md)  
