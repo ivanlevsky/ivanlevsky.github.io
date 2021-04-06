@@ -89,6 +89,53 @@ xx = MsgBox(Replace(a, "abc","edf") ,4,"Replace Function")
 ![replace](../../images/develop/vbscript/replace.png)
 
 
+### Conditional Function
+***
+```vb
+'Conditionally execute a block of statements.
+a = 12
+strtext = "a：" & a & " "
+If a<0 Then  
+  strtext = strtext & "< 0" 
+ElseIf  a=0 Then
+  strtext = strtext  & "= 0" 
+Else 
+  strtext = strtext &  ">0" 
+End if
+x=MsgBox(strtext)
+``` 
+![if_else](../../images/develop/vbscript/if_else.png)
+
+```vb
+'Conditionally execute a block of statements
+a = 1
+strtext = "" 
+d=weekday(date)
+Select Case d
+Case 1
+strtext = strtext & ("Sunday")
+Case 2
+strtext = strtext &("Monday")
+Case 3
+strtext = strtext &("Tuesday")
+Case 4
+strtext = strtext &("Wednesday")
+Case 5
+strtext = strtext &("Thursday")
+Case 6
+strtext = strtext &("Friday")
+Case else
+strtext = strtext &("Saturday")
+End Select
+
+x=MsgBox("Today is？"&chr(10)& strtext )
+```
+![switch_case](../../images/develop/vbscript/switch_case.png)
+
+
+
+
+
 
 Reference:  
 https://www.informit.com/articles/article.aspx?p=1187429&seqNum=5
