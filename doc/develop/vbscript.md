@@ -209,6 +209,88 @@ x = MsgBox("a largest dimension:"& UBound(a),4,"Ubound Function")
 ```
 ![ubound](../../images/develop/vbscript/ubound.png)
 
+### File Object
+***
+```
+FileSystemObject Methods:
+
+.BuildPath(strPath, strFileName)
+.CopyFile(Source, Dest [,Overwrite (True/False)]
+.CopyFolder(Source, Dest [,Overwrite (True/False)]
+.CreateFolder(Path)
+.CreateTextFile(FileName [,Overwrite (True/False) [, Unicode (True/False)]])
+.DeleteFile(FileSpec, Force (True/False))
+.DeleteFolder(FileSpec, Force (True/False))
+.DriveExists(strDrive) (True/False)
+.FileExists(strFile) (True/False)
+.FolderExists(strFolder) (True/False)
+.GetAbsolutePathName(strPath) - Returns a string with the full drive, path, and file names: Drive:\Path\To\File.Ext
+.GetBaseName(strPath) - Returns a string with the file name, without the extension: File
+.GetDrive(strDrive) - Returns an object referring to a drive
+.GetDriveName(strDrive) - Returns a string referring to a drive. Drive:
+.GetExtensionName(strPath) - Returns a string referring to the extension of the file. Ext
+.GetFile(strPath) - Returns an object referring to a file.
+.GetFileName(strPath) - Returns a string referring to a file. File.Ext
+.GetFolder(strPath) - Returns an object referring to the path.
+.GetParentFolderName(strPath) - Returns a string referring to the path. \Path\To\
+.GetSpecialFolderName(FolderType) FolderType=SystemFolder/TemporaryFolder/WindowsFolder
+.GetStandardStream(Type [,Unicode (True/False)])
+.GetTempName()
+.MoveFile(Source, Dest)
+.MoveFolder(Source, Dest)
+.OpenTextFile(strFile [,IOMode (8=append, 1=Read, 2=Write) [,Create (True/False) [,Format (0=Ascii, -1=Unicode, -2=default)]]])
+
+Drive Properties:
+AvailableSpace, DriveLetter, DriveType, FileSystem, FreeSpace,IsReady, 
+Path, RootFolder, SerialNumber, ShareName, TotalSize, VolumeName
+DrivesCollection properties: Count, Item
+
+File Properties:
+Attributes, DateCreated, DateLastAccessed, DateLastModified,Drive,
+Name, ParentFolder, Path, ShortName, ShortPath, Size, Type
+File Methods: .copy, .Delete, .Move, .OpenAsTextStream
+
+Folder Properties:
+Attributes, DateCreated, DateLastAccessed, DateLastModified,Drive,
+Files, IsRootFolder, Name, ParentFolder, Path,
+ShortName, ShortPath, Size, SubFolders, Type
+Folder Methods: .copy, .CreateTextFile, .Delete, .Move
+
+FoldersCollection properties: Count, Item
+FoldersCollection Methods: Add
+```
+  
+```vb
+'FileSystemObject : Work with Drives, Folders and Files
+'create a folder and a file
+Set fs = CreateObject("Scripting.FileSystemObject")
+fs.CreateFolder("D:\test folder")
+fs.CreateTextFile("D:\test folder\1.txt")
+
+'copy folder and file
+fs.CopyFolder "D:\test folder", "D:\test folder copy"
+fs.CopyFile "D:\test folder\1.txt", "D:\test folder copy\2.txt"
+
+'move folder and file
+fs.MoveFolder "D:\test folder", "D:\test folder move"
+fs.MoveFile "D:\test folder\1.txt", "D:\test folder move\1.txt"
+
+'delete folder and file
+fs.DeleteFolder "D:\test folder"
+fs.DeleteFIle "D:\text folder\1.txt"
+
+'append text in file
+'OpenTextFile : 1-read,2-overwrite,8-appendwrite
+Set fs = CreateObject("Scripting.FileSystemObject")
+Set f = fs.OpenTextFile("D:\test folder\1.txt", 8 , False)
+f.Write("HELLO WORLD")
+'read all text content
+MsgBox(f.ReadAll)
+'read one line text
+MsgBox(f.ReadLine)
+f.Close
+Set fs = Nothing
+```
 
 
 Reference:  
