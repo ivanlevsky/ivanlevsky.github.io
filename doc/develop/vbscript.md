@@ -292,6 +292,28 @@ f.Close
 Set fs = Nothing
 ```
 
+### Regular Expression Function
+```vb
+'RegExp : Regular expression search object.
+'test mail url valid or invalid
+Sub ReFunc(text)
+Set re  = New RegExp
+re.Pattern = "^[\w-\.]{1,}\@([\da-zA-Z-]{1,}\.){1,}[\da-zA-Z-]{2,3}$"
+re.IgnoreCase = False
+re.Global = False
+If re.Test(text) Then
+   MsgBox(text & " valid mail")
+Else
+   MsgBox(text & " invalid mail")
+End If
+Set re = Nothing
+End Sub
+
+text = "@123.com"
+ReFunc text
+text = "12@123.com"
+ReFunc text
+```
 
 Reference:  
 https://www.informit.com/articles/article.aspx?p=1187429&seqNum=5
