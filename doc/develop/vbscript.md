@@ -30,7 +30,7 @@ The MsgBox function will return one of the following:
 ```
 
 ```vb
-'Display a dialogue box message
+'Msgbox : Display a dialogue box message
 xx = MsgBox("pop up message",4,"123 title")
 ```
 ![msgbox](../../images/develop/vbscript/msgbox.png)  
@@ -39,18 +39,18 @@ xx = MsgBox("pop up message",4,"123 title")
 ***
 
 ```vb
-'The current system date
+'Date : The current system date
 xx = MsgBox(Date(),4,"Date Function")
 ```
 ![date](../../images/develop/vbscript/date.png)   
 
 ```vb
-'Return the current Date and Time  
+'Now : Return the current Date and Time  
 xx = MsgBox(Now,4,"Now Function")
 ```
 ![now](../../images/develop/vbscript/now.png)  
 ```vb
-'The current system time
+'Time : The current system time
 xx = MsgBox(Time,4,"Time Function")
 ```
 ![time](../../images/develop/vbscript/time.png) 
@@ -58,31 +58,31 @@ xx = MsgBox(Time,4,"Time Function")
 ### String Function
 ***
 ```vb
-'Find one string within another
+'Instr : Find one string within another
 a = "123 456 abc"
 xx = MsgBox(InStr(a,"a") ,4,"Instr Function")
 ```
 ![instr](../../images/develop/vbscript/instr.png)  
 ```vb
-'Return a mid-section from a string
+'Mid : Return a mid-section from a string
 a = "123 456 abc"
 xx = MsgBox(Mid(a,5,3) ,4,"Mid Function")
 ```
 ![mid](../../images/develop/vbscript/mid.png) 
 ```vb
-'Return the leftmost len characters of string
+'Left : Return the leftmost len characters of string
 a = "123 456 abc"
 xx = MsgBox(Left(a,3) ,4,"Left Function")
 ```
 ![left](../../images/develop/vbscript/left.png)
 ```vb
-'Return the rightmost len characters of string
+'Right : Return the rightmost len characters of string
 a = "123 456 abc"
 xx = MsgBox(Right(a,3) ,4,"Right Function")
 ```
 ![right](../../images/develop/vbscript/right.png)
 ```vb
-'Find and replace text
+'Replace : Find and replace text
 a = "123 456 abc"
 xx = MsgBox(Replace(a, "abc","edf") ,4,"Replace Function")
 ```
@@ -92,7 +92,7 @@ xx = MsgBox(Replace(a, "abc","edf") ,4,"Replace Function")
 ### Conditional Function
 ***
 ```vb
-'Conditionally execute a block of statements.
+'If...ElseIf...Else...End If : Conditionally execute a block of statements.
 a = 12
 strtext = "a：" & a & " "
 If a<0 Then  
@@ -107,7 +107,7 @@ x=MsgBox(strtext)
 ![if_else](../../images/develop/vbscript/if_else.png)
 
 ```vb
-'Conditionally execute a block of statements
+'Select...Case... : Conditionally execute a block of statements
 a = 1
 strtext = "" 
 d=weekday(date)
@@ -134,9 +134,9 @@ x=MsgBox("Today is？"&chr(10)& strtext )
 ### Loop Function
 ***
 ```vb
-'Repeat a block of statements a given number of times
-'Step to skip number every loop
-'Exit For to end loop
+'For...Next... : Repeat a block of statements a given number of times
+'Step : to skip number every loop
+'Exit For : to end loop
 strtext = "" 
 For i = 1 To 5 Step 2
 if i = 4 Then Exit For
@@ -147,7 +147,7 @@ x=MsgBox("count one to five："&strtext ,0,"For Next Function")
 ![for_next](../../images/develop/vbscript/for_next.png)
 
 ```vb
-'Loop through the items in a collection or array
+'For...Each... : Loop through the items in a collection or array
 strtext = "" 
 Dim country(2)
 country(0)="china"
@@ -161,7 +161,7 @@ x=MsgBox("list all countries："&strtext ,0,"For Each Function")
 ![for_each](../../images/develop/vbscript/for_each.png)
 
 ```vb
-'Repeat a block of statements
+'Do While...Loop..., Do...Loop Until... : Repeat a block of statements
 a = 5
 strtext = "" 
 Do While a>0
@@ -186,7 +186,7 @@ x=MsgBox("a minus 1 every loop："&strtext ,0,"Do Loop Function")
 ### Object Function
 ***
 ```vb
-'GetObject is a wscript method, Get an Automation object
+'GetObject : a wscript method, Get an Automation object
 Set fileObject = GetObject("D:\1.xlsx")
 Set cell = fileObject.Sheets(1).Cells(1,1)
 x=MsgBox(cell,4,"Read Excel Cell")
@@ -194,7 +194,7 @@ x=MsgBox(cell,4,"Read Excel Cell")
 ![getobject](../../images/develop/vbscript/getobject.png)
 
 ```vb
-'Create an automation object / run an external command
+'CreateObject : an automation object / run an external command
 'write text file D:\1.txt with content "123abc" 
 Set objFileToWrite = CreateObject("Scripting.FileSystemObject").OpenTextFile("D:\1.txt",2,true)
 objFileToWrite.WriteLine("123abc")
@@ -203,9 +203,9 @@ Set objFileToWrite = Nothing
 ```
 
 ```vb
-'Return the largest subscript for an array dimension
+'UBound : Return the largest subscript for an array dimension
 a = Array("abele","iefjofe","jlkkl")
-x = MsgBox("a largest dimension:"& ubound(a),4,"Ubound Function")
+x = MsgBox("a largest dimension:"& UBound(a),4,"Ubound Function")
 ```
 ![ubound](../../images/develop/vbscript/ubound.png)
 
