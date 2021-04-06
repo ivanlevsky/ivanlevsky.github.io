@@ -46,6 +46,7 @@ cicd
 develop  
 [database_doc](doc/develop/database.md)  
 [java_doc](doc/develop/java.md)   
+[vbscript_doc](doc/develop/vbscript.md)
   
 system   
 [debian_doc](doc/system/debian.md)  
