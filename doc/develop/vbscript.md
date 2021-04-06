@@ -1,6 +1,5 @@
 ### MsgBox Function
 ***
-Display a dialogue box message
 ```
 Syntax 
       MsgBox(prompt [, buttons][, title]
@@ -30,18 +29,31 @@ The MsgBox function will return one of the following:
 7 = No was clicked (vbNo)
 ```
 
-```
-xx=MsgBox("pop up message",4,"123 title")
+```vb
+'Display a dialogue box message
+xx = MsgBox("pop up message",4,"123 title")
 ```
 ![msgbox](../../images/develop/vbscript/msgbox.png)  
 
 ### Date Function
 ***
-The current system date
+
+```vb
+'The current system date
+xx = MsgBox(Date(),4,"Date Function")
 ```
-xx=MsgBox(Date(),4,"Date Function")
+![date](../../images/develop/vbscript/date.png)   
+
+```vb
+'Return the current Date and Time  
+xx = MsgBox(Now,4,"Now Function")
 ```
-![msgbox](../../images/develop/vbscript/date.png) 
+![now](../../images/develop/vbscript/now.png)  
+```vb
+'The current system time
+xx = MsgBox(Time,4,"Time Function")
+```
+![time](../../images/develop/vbscript/time.png)  
 
 Reference:  
 https://www.informit.com/articles/article.aspx?p=1187429&seqNum=5
