@@ -482,6 +482,28 @@ Next
 MsgBox s
 ```
 
+### Visual Basic ADO
+***
+```vb
+'connect to mysql and query myclass table
+Set objConnection = CreateObject("ADODB.CONNECTION")
+Set objCMD = CreateObject("ADODB.COMMAND")
+sql = "select * from myclass"
+constr = "Driver={MySQL ODBC 5.1 Driver};Server=localhost;" & _
+ "Database=mytest;User=root;" & "Password=root;"
+objConnection.open constr
+If(objConnection.State=1) Then
+   MsgBox("database connected")
+End If
+objCMD.ActiveConnection = objConnection
+objCMD.CommandText = sql
+set rs = objCMD.Execute
+While rs.EOF <> True AND rs.BOF <> True
+    wscript.echo rs(0) & " " & rs(1) & " " & rs(2)
+    rs.movenext
+WEnd
+objConnection.close
+```
 
 
 ### WshScript shell sendkeys
