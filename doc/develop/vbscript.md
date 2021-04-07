@@ -394,7 +394,7 @@ WScript.Sleep 5000
 objWshShell.sendKeys "1abd"
 
 '.Run : Run an external Command
-objWshShell.Run "iexplorer.exe"
+objWshShell.Run "iexplore.exe"
 
 '.Sendkeys : end one or more keystrokes to the active window as if they were typed at the keyboard
 objWshShell.sendKeys "%d"
@@ -441,7 +441,22 @@ Next
 ### Windows Processes
 ***
 ```vb
-
+'find ie process id and kill it
+strComputer = "."
+notepadPid = "0"
+Set wbemServices = Getobject("winmgmts://" & strComputer)
+Set wbemObjectSet = wbemServices.InstancesOf("Win32_Process")
+For Each wbemObject In wbemObjectSet
+'WScript.Echo "Name:   " & wbemObject.Name & vbCrLf & _
+'	" Handle:  " & wbemObject.Handle & vbCrLf & _
+'	" Process ID: " & wbemObject.ProcessID
+                If wbemObject.Name = "iexplore.exe" Then
+	'MsgBox("ie pid:" & wbemObject.ProcessID)
+	wbemObject.Terminate()
+                End If
+Next
+Set wbemServices = Nothing
+Set wbemObjectSet = Nothing
 ```
 
 ### WshScript shell sendkeys
@@ -482,6 +497,7 @@ For ALT   prefix with %
 
 ### Visual Basic miscellaneous constants
 ***
+  
 Constant | Equivalent | Description
 ---|---|---
 vbCrLf | Chr(13) + Chr(10) | Carriage return-linefeed combination
