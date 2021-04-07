@@ -51,7 +51,7 @@ sudo docker container ls -a
 sudo docker rm -f 
 
 #clear docker cache use in linux memory
-echo 3 > sudo /proc/sys/vm/drop_caches
+echo 3 | sudo tee /proc/sys/vm/drop_caches
 ```
 
 ### Reference:    
