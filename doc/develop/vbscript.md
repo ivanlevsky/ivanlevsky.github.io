@@ -279,6 +279,30 @@ fs.MoveFile "D:\test folder\1.txt", "D:\test folder move\1.txt"
 fs.DeleteFolder "D:\test folder"
 fs.DeleteFIle "D:\text folder\1.txt"
 
+'get file name
+fs.GetFileName("D:\text folder\1.txt")
+
+'whether file, folder, drive exist
+fs.FileExists("D:\text folder\1.txt")
+fs.FolderExists("D:\text folder\")
+fs.DriveExists("D:\")
+
+'loop read files in folder
+Function ListFiles(filespec)
+   Dim fso, msg
+   Set fso = CreateObject("Scripting.FileSystemObject")
+   Set fd = fso.GetFolder(filespec)
+   For Each ofd in fd.SubFolders:
+         ListFiles(ofd.Path)
+   Next
+   For Each ofs in fd.Files:
+          Set f = fso.OpenTextFile(ofs.Path, 1, True)
+          MsgBox(ofs.Path & " content: " & (f.ReadAll))
+   Next
+End Function
+ListFiles("D:\text folder")
+
+
 'append text in file
 'OpenTextFile : 1-read,2-overwrite,8-appendwrite
 Set fs = CreateObject("Scripting.FileSystemObject")
@@ -293,6 +317,7 @@ Set fs = Nothing
 ```
 
 ### Regular Expression Function
+***
 ```vb
 'RegExp : Regular expression search object.
 'test mail url valid or invalid
@@ -314,6 +339,83 @@ ReFunc text
 text = "12@123.com"
 ReFunc text
 ```
+
+### Class Definition
+***
+```vb
+Class User
+    'create user properties
+	private user_name
+	private user_age
+	
+	Private Sub Class_Initialize  
+		'MsgBox("user class initialize")
+	End Sub
+	Private Sub Class_Terminate  
+		'MsgBox("user class terminate")
+	End Sub
+	
+    'create get and set property functions
+	Public Property Get UserName
+		UserName = user_name
+	End Property
+	Public Property Get UserAge
+	    UserAge = user_age
+	End Property
+	Public Property Let UserName(new_name)
+		user_name = new_name
+	End Property 
+	Public Property Let UserAge(new_age)
+		user_age = new_age
+	End Property
+
+    'create custom function
+	Public Sub ToString()
+		MsgBox "name："+UserName+" , age："+UserAge
+	End Sub
+	
+End Class
+
+'call user
+Dim myuser
+set myuser = New User
+myuser.UserName = "Neo"
+myuser.UserAge ="23"
+myuser.ToString
+```
+
+### WshScript Shell
+***
+```vb
+'WScript Object run notepad.exe and type keyboard with text "1abd"
+Set objWshShell = CreateObject("WScript.Shell")
+objWshShell.Run "Notepad"
+WScript.Sleep 5000
+objWshShell.sendKeys "1abd"
+
+
+'.RegWrite : Write a value to the Registry
+objWshShell.RegWrite "HKLM\SOFTWARE\ivan\", 1, "REG_BINARY"
+objWshShell.RegWrite "HKLM\SOFTWARE\ivan\test", "Goocher!", "REG_SZ")
+
+'.RegRead : Read a value from the Registry
+WScript.Echo objWshShell.RegRead("HKLM\SOFTWARE\ivan\")
+WScript.Echo objWshShell.RegRead("HKLM\SOFTWARE\ivan\test")
+
+'.RegDelete : Delete a value from the Registry
+objWshShell.RegDelete("HKLM\SOFTWARE\ivan\")
+objWshShell.RegDelete("HKLM\SOFTWARE\ivan\test")
+
+
+'.Popup : Display text in a pop-up message box
+objWshShell.Popup "2 second to close", 2, "popup title"
+
+Set objWshShell = Nothing
+
+```
+registry abbr. see [windows](../system/windows.md)
+
+
 
 Reference:  
 https://www.informit.com/articles/article.aspx?p=1187429&seqNum=5
