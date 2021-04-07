@@ -466,6 +466,24 @@ Set wbemServices = Nothing
 Set wbemObjectSet = Nothing
 ```
 
+### Visual Basic Dictionary
+***
+```vb
+'add keys and values, loop the dictionary
+Dim a, d, i, s
+Set d = CreateObject("Scripting.Dictionary")
+d.Add "a", "Athens"
+d.Add "b", "Belgrade"
+d.Add "c", "Cairo"
+a = d.Items
+For i = 0 To d.Count - 1
+  s = s & a(i) & " "
+Next
+MsgBox s
+```
+
+
+
 ### WshScript shell sendkeys
 ***
   
