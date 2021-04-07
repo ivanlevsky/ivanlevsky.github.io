@@ -281,6 +281,13 @@ fs.DeleteFIle "D:\text folder\1.txt"
 
 'get file name
 fs.GetFileName("D:\text folder\1.txt")
+fs.GetFile("D:\text folder\1.txt").Name
+
+'show file create time
+fs.GetFile("D:\text folder\1.txt").DateCreated
+
+'show drive spaces
+fs.Drives("C").AvailableSpace/1024/1024/1024
 
 'whether file, folder, drive exist
 fs.FileExists("D:\text folder\1.txt")
