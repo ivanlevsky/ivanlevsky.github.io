@@ -561,7 +561,7 @@ vbVerticalTab | Chr(11) | Not useful in Microsoft Windows or on the Macintosh
 
 
 Reference:  
-https://www.informit.com/articles/article.aspx?p=1187429&seqNum=5
-'https://docs.microsoft.com/en-us/previous-versions//d1wf56tt(v=vs.85)
-'https://ss64.com/vb/network.html
-'https://docs.microsoft.com/en-us/previous-versions/ms807642%28v%3dmsdn.10%29
+[WshShell Object](https://www.informit.com/articles/article.aspx?p=1187429&seqNum=5)  
+[Windows VBScript Commands](https://ss64.com/vb/network.html)    
+[Microsoft VBScript Language Reference](https://docs.microsoft.com/en-us/previous-versions//d1wf56tt(v=vs.85))    
+[Microsoft VBScript ADO Guide](https://docs.microsoft.com/en-us/previous-versions/ms807642%28v%3dmsdn.10%29)
