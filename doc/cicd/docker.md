@@ -50,7 +50,8 @@ sudo docker container ls -a
 #delete a container
 sudo docker rm -f 
 
-
+#clear docker cache use in linux memory
+echo 3 > sudo /proc/sys/vm/drop_caches
 ```
 
 ### Reference:    
