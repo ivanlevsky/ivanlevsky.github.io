@@ -303,9 +303,9 @@ End Function
 ListFiles("D:\text folder")
 
 
-'append text in file
 'OpenTextFile : 1-read,2-overwrite,8-appendwrite
 Set fs = CreateObject("Scripting.FileSystemObject")
+'append text in file
 Set f = fs.OpenTextFile("D:\test folder\1.txt", 8 , False)
 f.Write("HELLO WORLD")
 'read all text content
@@ -393,6 +393,11 @@ objWshShell.Run "Notepad"
 WScript.Sleep 5000
 objWshShell.sendKeys "1abd"
 
+'.Run : Run an external Command
+objWshShell.Run "iexplorer.exe"
+
+'.Sendkeys : end one or more keystrokes to the active window as if they were typed at the keyboard
+objWshShell.sendKeys "%d"
 
 '.RegWrite : Write a value to the Registry
 objWshShell.RegWrite "HKLM\SOFTWARE\ivan\", 1, "REG_BINARY"
@@ -414,6 +419,44 @@ Set objWshShell = Nothing
 
 ```
 registry abbr. see [windows](../system/windows.md)
+
+
+
+
+### WshScript shell sendkeys
+***
+  
+Key/Character | SendKey | Description
+---|---|---
+~	| {~} |	Send a tilde (~)
+!	| {!} |	Send an exclamation point (!)
+^	| {^} |	Send a caret (^)
++	| {+} |	Send a plus sign (+)
+Backspace	| {BACKSPACE} or {BKSP} or {BS}	| Send a Backspace keystroke
+Break	| {BREAK}	| Send a Break keystroke
+Caps Lock	| {CAPSLOCK}	| Press the Caps Lock Key (toggle on or off)
+Clear	| {CLEAR}	| Clear the field
+Delete	| {DELETE} or {DEL}	| Send a Delete keystroke
+Insert	| {INSERT} or {INS}	| Send an Insert keystroke
+Cursor control arrows	| {LEFT} / {RIGHT} / {UP} / {DOWN}	|Send a Left/Right/Up/Down Arrow
+End	| {END}	| Send an End keystroke
+Enter	| {ENTER} or ~  | Send an Enter keystroke
+Escape	| {ESCAPE} | Send an Esc keystroke
+F1 through F16	| {F1} through {F16}	|Send a Function keystroke
+Help	| {HELP} | Send a Help keystroke
+Home	| {HOME} | Send a Home keystroke
+Numlock	| {NUMLOCK} | Send a Num Lock keystroke
+Page Down Page Up | {PGDN} {PGUP} | Send a Page Down or Page Up keystroke
+Print Screen | {PRTSC} | Send a Print Screen keystroke
+Scroll lock	| {SCROLLLOCK} | Press the Scroll lock Key (toggle on or off)
+TAB	| {TAB} | Send a TAB keystroke
+  
+To specify keys combined with any combination of SHIFT,
+CTRL, and ALT keys, precede the key code with one or more 
+of the following:  
+For SHIFT prefix with +  
+For CTRL  prefix with ^  
+For ALT   prefix with %  
 
 
 
