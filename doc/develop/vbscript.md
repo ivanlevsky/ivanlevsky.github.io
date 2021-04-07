@@ -421,7 +421,22 @@ Set objWshShell = Nothing
 registry abbr. see [windows](../system/windows.md)
 
 
+### WshScript Network
+***
+```vb
+'.Network : Provides access to the shared resources on the network to which your computer is connected
+Set WshNetwork = WScript.CreateObject("WScript.Network")
+WScript.Echo "Domain = " & WshNetwork.UserDomain
+WScript.Echo "Computer Name = " & WshNetwork.ComputerName
+WScript.Echo "User Name = " & WshNetwork.UserName
 
+
+'.EnumPrinterConnections : Enumerate printer connections
+Set oPrinters = WshNetwork.EnumPrinterConnections
+For i = 0 to oPrinters.Count - 1 Step 2
+    WScript.Echo "Port " & oPrinters.Item(i) & " = " & oPrinters.Item(i + 1)
+Next
+```
 
 ### WshScript shell sendkeys
 ***
