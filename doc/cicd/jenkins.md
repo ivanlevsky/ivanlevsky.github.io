@@ -14,6 +14,10 @@ sudo ln -s /home/zelda/jdk-11/bin/java /usr/bin/java
 sudo dpkg -i /home/zelda/jenkins_2.277.1_all.deb
 #check jenkins status
 sudo systemctl status jenkins
+
+#full clean jenkins
+sudo systemctl stop jenkins
+sudo apt-get remove --purge jenkins
 ```
   
   
