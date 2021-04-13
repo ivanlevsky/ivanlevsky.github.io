@@ -59,6 +59,15 @@ A: open your app, and run commands:
 adb shell  
 dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'
 ```   
+Q: "dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp" not return message?
+A: in phone like realme q2 search "mSurface" param
+```shell
+adb shell  
+dumpsys window windows |grep -E 'mSurface=Surface'
+```
+
+Q: appium can't install appium settings app in phone(eg. realme q2)?
+A: in develop options-> apps -> "Disable Permission Monitoring"
 
 Q: error when starting sdkmanger.bat in windows10 ?  
 A: download the command line tool.zip, unpack it,maken sure the folder structure like this:
