@@ -31,3 +31,14 @@ user:jkuser
 pass:jkpass  
 ```
 
+set jenkins language, install 'locale' plugin, on dashboard: 
+``` 
+manage jenkins->system configuration->configure system->Locale->default language  
+input 'en_US', and check 'Ignore browser preference and force this language to all users' optiion
+```
+
+set user time zone, on dashboard:  
+```
+people->user->configure->User Defined Time Zone->time zone
+select 'Asia/Shanghai
+```
