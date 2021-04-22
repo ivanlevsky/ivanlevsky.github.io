@@ -85,12 +85,13 @@ D:\your-android-sdk-folder
 Q: how to search installed app's name(app's label) ?  
 A: install aapt binary for android and  run commands:
 ```shell 
-#https://android.izzysoft.de/downloads --for android 5.0 before  
-#https://github.com/Calsign/APDE/tree/master/APDE/src/main/assets/aapt-binaries --for android 5.0 or after and x86 device
-
+# https://android.izzysoft.de/downloads --for android 5.0 before  
+# https://github.com/Calsign/APDE/tree/master/APDE/src/main/assets/aapt-binaries --for android 5.0 or after and x86 device
+# push aapt binary to phone
 adb push aapt-are-pie to /data/local/tmp
 adb shell chmod 0755 /data/local/tmp/aapt-arm-pie
-#get apkpath
+
+# get apkpath
 adb shell pm list packages -3 -f
 adb shell /data/local/tmp/aapt-arm-pie d badging + apkpath
 ```   

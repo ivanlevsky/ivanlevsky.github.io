@@ -12,11 +12,13 @@
 login into tty3 text terminal mode (press `CTRL+ALT+F3`)  
 
 ```shell
-#stop gnome graphic login program  
+# stop gnome graphic login program  
 systemctl stop gdm
-#check gdm status
+
+# check gdm status
 systemctl status gdm
-#get debian system start mode(gui:graphical.target)
+
+# get debian system start mode(gui:graphical.target)
 systemctl get-default
 ```
 
@@ -34,42 +36,45 @@ ip a
 
 ftp server setup
 ```shell
+# install vsftp
 sudo apt install vsftpd
-#backup vsftp conf file
+
+# backup vsftp conf file
 sudo /etc/vsftpd.conf /etc/vsftpd.conf.bak
 
-#setup vsftp
+# setup vsftp
 sudo vi /etc/vsftpd.conf
 
-#set anonymous_enable
+# set anonymous_enable
 anonymous_enable=YES
 
-#uncomment line
+# uncomment line
 write_enable=YES 
 
-#change default port
-#uncomment line
+# change default port
+# uncomment line below
 connect_from_port_20=YES
-#add line
+# add line below
 listen_port=21
 
-#uncomment three lines
+# uncomment three lines below
 chroot_local_user=YES
 chroot_list_enable=YES
 chroot_list_file=/etc/vsftpd.chroot_list 
 
-#add ftp user, add ftpuser in vsftpd.chroot_list 
+# add ftp user, add ftpuser in vsftpd.chroot_list 
 sudo vi /etc/vsftpd.chroot_list
-#add linux user ftpuser/ftpuserpasswd 
+
+# add linux user ftpuser/ftpuserpasswd 
 sudo adduser ftpuser 
 
-#check user
+# check user
 more /etc/vsftpd.chroot_list
 
-#check vsftpd conf
+# check vsftpd conf
 sudo cat /etc/vsftpd.conf | grep -v "^#"
 
-#restart VSFTPD service and check the status
+# restart VSFTPD service and check the status
 sudo systemctl restart vsftpd
 sudo systemctl status vsftpd
 ```

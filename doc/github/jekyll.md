@@ -4,7 +4,7 @@ install jekyll prerequisites
 ![install_prerequisites](../../images/github/jekyll/install_prerequisites.png)  
 check prerequisites installed
 ```shell
-#check ruby, rubygems, gcc and make installed
+# check ruby, rubygems, gcc and make installed
 ruby-v
 gem-v
 gcc -v
@@ -17,12 +17,15 @@ create jekyll project
 ![create_jekyll_project](../../images/github/jekyll/create_jekyll_project.png)  
 run jekyll server
 ```shell 
-cd myblog
-#generate new html pages
+cd myblog directory
+
+# generate new html pages
 bundle exec jekyll build
-#run in http://localhost:4000
+
+# run in http://localhost:4000
 bundle exec jekyll serve
-#run in http://192.168.43.127:4000/
+
+# run in http://192.168.43.127:4000/
 bundle exec jekyll serve --host 192.168.43.127 --port 4000
 ```
 ![run_jekyll_server](../../images/github/jekyll/run_jekyll_server.png)  
