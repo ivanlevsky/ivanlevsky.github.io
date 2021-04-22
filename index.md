@@ -53,6 +53,7 @@ system
 [windows_doc](doc/system/windows.md)
   
 github  
+[git_doc](doc/github/git.md)
 [jekyll_doc](doc/github/jekyll.md)  
   
 machine learning  
