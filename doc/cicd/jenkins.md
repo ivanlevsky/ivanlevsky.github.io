@@ -42,3 +42,24 @@ set user time zone, on dashboard:
 people->user->configure->User Defined Time Zone->time zone
 select 'Asia/Shanghai
 ```
+
+add github token
+```
+manage jenkins->system configuration->configure system->github
+->github server
+click add credentials 
+```
+![jenkins_github](../../images/cicd/jenkins/jenkins_github.png)  
+```
+select 'secret text'  
+```
+![jenkins_github_token1](../../images/cicd/jenkins/jenkins_github_token1.png)  
+```
+in github 'Settings->Developer settings->Personal access tokens', 
+copy token to jenkins credentials secret 
+```
+![jenkins_github_token2](../../images/cicd/jenkins/jenkins_github_token2.png)
+```
+click test connection to test  
+```
+![jenkins_github_token3](../../images/cicd/jenkins/jenkins_github_token3.png)  
