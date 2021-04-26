@@ -93,7 +93,12 @@ sudo systemctl stop mysqld
 sudo systemctl start mysqld
 sudo systemctl status mysqld
 ```  
-
+check all exist user
+```shell
+more /etc/passwd
+compgen -u
+getent passwd
+```
 
 ## Reference:  
 [https://wiki.debian.org/ReduceDebian](https://wiki.debian.org/ReduceDebian)  
