@@ -34,6 +34,10 @@ create jenkins user
 user:jkuser  
 pass:jkpass  
 ```
+jenkins will create a service account without shell callded 'jenkins' user in linux system, to login it use
+```shell
+sudo su -s /bin/bash jenkins
+```
 
 set jenkins language, install 'locale' plugin, on dashboard: 
 ``` 
@@ -68,6 +72,77 @@ click test connection to test
 ```
 ![jenkins_github_token3](../../images/cicd/jenkins/jenkins_github_token3.png)
 
-### Pipeline
+### Write Pipeline Script
 ***
-add github ssh key when add git url in pipeline 
+check out github repo to local, use HTTPS or SSH path to clone, 
+HTTPS don't need add 'credentialsId' param, when use SSH, need add 'credentialsId' param, 
+check [git doc](../../doc/github/git.md) to add ssh key in github.    
+add ssh private key in jenkins Credentials page, copy private key content in `'../.ssh/id_rsa'`  
+![jenkins_github_ssh_key](../../images/cicd/jenkins/jenkins_github_ssh_key.png)
+
+write a github checkout pipeline script
+```groovy
+checkout([
+    $class: 'GitSCM',
+    branches: [[name: '*/master']],
+    extensions: [],
+    userRemoteConfigs: [[   
+            //https git clone
+            //url: 'https://github.com/ivanlevsky/stand-alone-complex-tomato.git'
+            
+            //ssh git clone
+            credentialsId: 'jenkins-ssh-key', 
+            url: 'git@github.com:ivanlevsky/stand-alone-complex-tomato.git'
+    ]]
+])
+
+```
+### Pipeline Error
+***
+this is a error when jenkins ssh private key content is not correct, 
+the key should begin with `--BEGIN RSA PRIVATE KEY--` and end with `--END RSA PRIVATE KEY--`.    
+![jenkins_github_ssh_key_error](../../images/cicd/jenkins/jenkins_github_ssh_key_error.png)
+
+relativeTargetDir will cause permission error, due to jenkins create a user in linux called 'jenkins'
+this user don't have permissions in the relativeTargetDir targeted folder `gitproject`, the 
+targeted folder's user is 'zelda'
+```groovy
+[$class: 'RelativeTargetDirectory', relativeTargetDir: '../../gitproject']
+```
+![jenkins_github_target_dir](../../images/cicd/jenkins/jenkins_github_target_dir.png)
+  
+  
+### Set Pipeline Script In SCM
+***
+the pipeline script 'Jenkinsfile' can upload to github, when build a project,
+jenkins will download from SCM
+``` 
+in jenkins project, configure->pipeline->definition->select 'Pipeline script from SCM'
+```
+
+add github ssh private key when add pipeline script git url in pipeline 
+  
+![jenkins_github_error](../../images/cicd/jenkins/jenkins_github_error.png)  
+this is a error when git path is error, use `which git` to check git path  
+```
+manage jenkins->system configuration->Global Tool Configuration->Git
+->Git installations->Path to Git executable
+input '/usr/bin/git' or just 'git'
+```
+![jenkins_github_correct](../../images/cicd/jenkins/jenkins_github_correct.png)
+add Additional Behaviours 'Check out to a sub-directory', 
+this not working now, see pipeline relativeTargetDir error
+![jenkins_github_checkout](../../images/cicd/jenkins/jenkins_github_checkout.png)
+  
+### Build Project
+***
+reset pipeline build number  
+  
+```groovy
+item = Jenkins.instance.getItemByFullName("github java project")
+//THIS WILL REMOVE ALL BUILD HISTORY
+item.builds.each() { build ->
+  build.delete()
+}
+item.updateNextBuildNumber(1)
+```
