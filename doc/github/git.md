@@ -16,6 +16,7 @@ clone repo
 ```shell
 git clone https://github.com/ivanlevsky/ivanlevsky.github.io.git
 ```
+  
 set ssh key in new computer
 ```shell
 # generate ssh key
@@ -26,5 +27,11 @@ cat ~/.ssh/id_rsa.pub
 
 # test ssh key
 ssh -T git@github.com
+```
+  
+check git commit history
+```shell
+cd ../git project dir/
+git log
 ```
 
