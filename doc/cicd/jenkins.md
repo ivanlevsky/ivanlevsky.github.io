@@ -99,29 +99,18 @@ checkout([
 ```
 ### Pipeline Error
 ***
+![jenkins_github_ssh_key_error](../../images/cicd/jenkins/jenkins_github_ssh_key_error.png)  
 this is a error when jenkins ssh private key content is not correct, 
 the key should begin with `--BEGIN RSA PRIVATE KEY--` and end with `--END RSA PRIVATE KEY--`.    
-![jenkins_github_ssh_key_error](../../images/cicd/jenkins/jenkins_github_ssh_key_error.png)
-
+  
+![jenkins_github_target_dir](../../images/cicd/jenkins/jenkins_github_target_dir.png)  
 relativeTargetDir will cause permission error, due to jenkins create a user in linux called 'jenkins'
 this user don't have permissions in the relativeTargetDir targeted folder `gitproject`, the 
 targeted folder's user is 'zelda'
 ```groovy
 [$class: 'RelativeTargetDirectory', relativeTargetDir: '../../gitproject']
-```
-![jenkins_github_target_dir](../../images/cicd/jenkins/jenkins_github_target_dir.png)
-  
-  
-### Set Pipeline Script In SCM
-***
-the pipeline script 'Jenkinsfile' can upload to github, when build a project,
-jenkins will download from SCM
-``` 
-in jenkins project, configure->pipeline->definition->select 'Pipeline script from SCM'
-```
+```  
 
-add github ssh private key when add pipeline script git url in pipeline 
-  
 ![jenkins_github_error](../../images/cicd/jenkins/jenkins_github_error.png)  
 this is a error when git path is error, use `which git` to check git path  
 ```
@@ -129,7 +118,24 @@ manage jenkins->system configuration->Global Tool Configuration->Git
 ->Git installations->Path to Git executable
 input '/usr/bin/git' or just 'git'
 ```
+  
+### Set Pipeline Script In SCM
+***
+the pipeline script `Jenkinsfile` can upload to github, when build a project,
+jenkins will download `Jenkinsfile` script from SCM
+``` 
+in jenkins project, configure->pipeline->definition->select 'Pipeline script from SCM'
+```
+
+add github ssh private key when add pipeline script git url in pipeline 
+  
+
 ![jenkins_github_correct](../../images/cicd/jenkins/jenkins_github_correct.png)
+  
+input script file `Jenkinsfile` relative path int git repo  
+![jenkins_github_jenkinsfile_path](../../images/cicd/jenkins/jenkins_github_jenkinsfile_path.png)
+  
+
 add Additional Behaviours 'Check out to a sub-directory', 
 this not working now, see pipeline relativeTargetDir error
 ![jenkins_github_checkout](../../images/cicd/jenkins/jenkins_github_checkout.png)
