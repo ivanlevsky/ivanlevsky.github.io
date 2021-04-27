@@ -99,8 +99,12 @@ more /etc/passwd
 compgen -u
 getent passwd
 ```
+check file size in folder
+```shell
+du -h 
+```
 
-## Reference:  
+### Reference:  
 [https://wiki.debian.org/ReduceDebian](https://wiki.debian.org/ReduceDebian)  
 [https://wiki.debian.org/FTP ](https://wiki.debian.org/FTP)  
 [https://wiki.debian.org/vsftpd](https://wiki.debian.org/vsftpd)  
