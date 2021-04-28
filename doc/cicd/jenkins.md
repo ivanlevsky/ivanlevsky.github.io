@@ -152,3 +152,21 @@ item.builds.each() { build ->
 }
 item.updateNextBuildNumber(1)
 ```
+
+set mvn home in jenkins global tool configuration
+![jenkins_mvn_install](../../images/cicd/jenkins/jenkins_mvn_install.png)
+```groovy
+tools {
+    // Install the Maven version configured as "M3" and add it to the path.
+    maven "M3"
+}
+
+stages {
+    stage('Build') {
+        steps {
+            // Run Maven on a Unix agent.
+            sh "mvn -v"
+        }
+    }
+}
+```
