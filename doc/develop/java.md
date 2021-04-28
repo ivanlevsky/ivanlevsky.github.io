@@ -9,9 +9,12 @@ tar xvf openjdk-11+28_linux-x64_bin.tar.gz
   
 set java home environment
 ```shell
-export JAVA_HOME=/home/zelda/jdk-11
+sudo vi /etc/profile
+# add line 'export JAVA_HOME=/home/zelda/jdk-11'
+# add '$JAVA_HOME/bin' in PATH
+source /etc/profile
+# test JAVA_HOME and PATH
 echo $JAVA_HOME
-export PATH=$PATH:$JAVA_HOME/bin
 echo $PATH
 ```
 
