@@ -42,7 +42,7 @@ sudo su -s /bin/bash jenkins
 set jenkins language, install 'locale' plugin, on dashboard: 
 ``` 
 manage jenkins->system configuration->configure system->Locale->default language  
-input 'en_US', and check 'Ignore browser preference and force this language to all users' optiion
+input 'en_US', and check 'Ignore browser preference and force this language to all users' option
 ```
 
 set user time zone, on dashboard:  
@@ -158,6 +158,8 @@ set mvn home in jenkins global tool configuration
 ```groovy
 tools {
     // Install the Maven version configured as "M3" and add it to the path.
+    // After installed maven, run 'mvn help:effective-settings' command
+    // to check .m2 path and install maven plugin
     maven "M3"
 }
 
@@ -166,7 +168,19 @@ stages {
         steps {
             // Run Maven on a Unix agent.
             sh "mvn -v"
+            // skip tests and clean files in target folder, package jar
+            sh 'mvn -B -DskipTests clean package'
+            // run unit test classes
+            sh 'mvn test'
         }
     }
 }
 ```
+### Mail Notifications
+***
+set jenkins user mail
+![jenkins_mail_setup1](../../images/cicd/jenkins/jenkins_mail_setup1.png)
+add smtp server, mail user and password
+![jenkins_mail_setup2](../../images/cicd/jenkins/jenkins_mail_setup2.png)
+test mail connection
+![jenkins_mail_setup3](../../images/cicd/jenkins/jenkins_mail_setup3.png)

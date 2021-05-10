@@ -103,6 +103,10 @@ check file size in folder
 ```shell
 du -h 
 ```
+find file in system
+```shell
+find /folder/abc/...  -name *abc123*
+```
 
 ### Reference:  
 [https://wiki.debian.org/ReduceDebian](https://wiki.debian.org/ReduceDebian)  
