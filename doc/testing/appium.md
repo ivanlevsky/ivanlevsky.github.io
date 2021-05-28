@@ -66,7 +66,7 @@ adb shell
 dumpsys window windows |grep -E 'mSurface=Surface'
 ```
 
-Q: appium can't install appium settings app in phone(eg. realme q2)?
+Q: appium can't install or start appium settings app in phone(eg. realme q2)?
 A: in develop options-> apps -> "Disable Permission Monitoring"
 
 Q: error when starting sdkmanger.bat in windows10 ?  

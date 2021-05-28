@@ -21,3 +21,27 @@ fix http return content encoding(or add beanshell)
 install plugin manager:  
 [https://jmeter-plugins.org/wiki/PluginsManager/](https://jmeter-plugins.org/wiki/PluginsManager/)
 
+### Jmeter Script
+***
+Jsr233 groovy script:
+```groovy
+//import other groovy file
+GroovyShell shell = new GroovyShell()
+script = shell.parse(new File("../script/commonFunctions.groovy"))
+//call commonFunctions.groovy function "functionABC"
+script.functionABC()
+
+//parse prev json response data
+import groovy.json.JsonSlurper;
+def jsonSlurper = new JsonSlurper();
+def response = jsonSlurper.parseText(prev.getResponseDataAsString());
+vars.put("responData", response.responData.toString());
+log.info("responData:" +  vars.get("responData"));
+vars.put("key1", response.responData.key1.toString());
+log.info("key1:" + vars.get("key1"));
+
+//define global param
+import groovy.transform.Field;
+@Field param1;
+@Field param2;
+```
