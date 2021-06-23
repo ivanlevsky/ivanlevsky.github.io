@@ -45,3 +45,12 @@ import groovy.transform.Field;
 @Field param1;
 @Field param2;
 ```
+
+jmeter jexl3 script: 
+```
+//logic controller set time in 9:00 am and 9:00 pm
+${__groovy("${__time(hh:mm a,)}"=="09:00 AM" || "${__time(hh:mm a,)}"=="09:00 PM")}
+//logic controller set time every 5 minite
+${__groovy("${__time(mm)%5 == 0}")}
+```
+
