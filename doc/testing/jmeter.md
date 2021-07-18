@@ -44,6 +44,11 @@ log.info("key1:" + vars.get("key1"));
 import groovy.transform.Field;
 @Field param1;
 @Field param2;
+
+//execute command, like java process run function
+'command'.execute()
+//base64 encode string
+"Hello World".bytes.encodeBase64().toString()
 ```
 
 jmeter jexl3 script: 
@@ -52,5 +57,22 @@ jmeter jexl3 script:
 ${__groovy("${__time(hh:mm a,)}"=="09:00 AM" || "${__time(hh:mm a,)}"=="09:00 PM")}
 //logic controller set time every 5 minite
 ${__groovy("${__time(mm)%5 == 0}")}
+```
+
+how to execute python script:
+```
+//run conda command to execute python script in jmeter groovy script
+'cmd /c activate base && cd C:/folder && python test.py key1_split_value1 key2_split_value2 && conda deactivate'.execute()
+
+# use below code in python project, split vars from jmeter
+options = []
+split_str = '_split_'
+n = len(sys.argv)
+for i in range(1, n):
+    k = sys.argv[i].split(split_str)[0]
+    v = sys.argv[i].split(split_str)[1]
+    options[k] = v
+    print(k)
+    print(options.get(k))
 ```
 
