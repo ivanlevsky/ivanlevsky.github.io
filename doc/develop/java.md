@@ -25,3 +25,19 @@ javac
 java -version
 ```
 
+run java package source, create classes folder in package
+```shell
+cd project folder
+mkdir classes
+javac -d classes src\com\java\common\DateUtils.java
+java -classpath ./classes com/java/common/DateUtils
+
+# use third party libs
+javac -cp lib\mysql-connector-java-5.1.21-bin.jar;lib\log4j-1.2.17.jar -d classes src\com\java\common\DatabaseUtils.java
+# compile jar file, create manifest.txt in project path:
+# Main-Class: com.java.common
+# Class-Path: lib\mysql-connector-java-5.1.21-bin.jar
+# <blank line>
+jar cfm DateUtils.jar manifest.txt -C classes com
+java -jar DateUtils.jar
+```
