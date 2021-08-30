@@ -424,6 +424,29 @@ objWshShell.Popup "2 second to close", 2, "popup title"
 
 Set objWshShell = Nothing
 
+'run cmd command example
+Sub runBatch(command)
+	Const WshFinished = 1
+	Const WshFailed = 2
+	strCommand = "cmd /C " & command
+	'MsgBox strCommand
+	Set WshShell = CreateObject("WScript.Shell")
+	Set WshShellExec = WshShell.Exec(strCommand)
+	dim strOutput
+	strOutput = ""
+	WScript.Sleep 500
+	Select Case WshShellExec.Status
+		Case WshFinished
+			strOutput = strOutput & WshShellExec.StdOut.ReadAll
+		Case WshFailed
+			strOutput = strOutput & WshShellExec.StdErr.ReadAll
+	End Select
+	'WScript.StdOut.Write strOutput 'write results to the command line
+	'WScript.Echo strOutput 'write results to default output
+	MsgBox strOutput 'write results in a message box	
+End Sub
+runBatch "dir"
+
 ```
 registry abbr. see [windows](../system/windows.md)
 
