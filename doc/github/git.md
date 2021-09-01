@@ -35,3 +35,8 @@ cd ../git project dir/
 git log
 ```
 
+delete commit log
+```shell
+cd ../git project dir/
+git reset --hard commit id
+```
