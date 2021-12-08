@@ -8,6 +8,9 @@ sudo apt-get install git
 git config --global user "ivanlevsky"
 git config --global user.name "ivanlevsky"
 git config --global user.email "ivanlevsky@gmail.com"
+
+# use this to fix git push ssl error 10054
+git config --global http.sslVerify "false"
 ```
 
 ### Use Git
