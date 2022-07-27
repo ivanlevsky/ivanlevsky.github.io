@@ -107,6 +107,11 @@ find file in system
 ```shell
 find /folder/abc/...  -name *abc123*
 ```
+check ram usage and clear cache
+```shell
+top
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+```
 
 ### Reference:  
 [https://wiki.debian.org/ReduceDebian](https://wiki.debian.org/ReduceDebian)  
