@@ -58,16 +58,17 @@ cd /home/zelda/Downloads/ivanlevsky.github.io/images
 put -r ./images
 ```
 
-### Error
+### Error Fix
+***
 ![run_jekyll_server_error](../../images/github/jekyll/run_jekyll_server_error.png)
 follow this instruction:
 [https://idratherbewriting.com/documentation-theme-jekyll/mydoc_install_jekyll_on_mac.html#githuberror](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_install_jekyll_on_mac.html#githuberror)
 ```shell 
 # in debian home folder
 cd ~
-# generate token in github develop setting page
-echo "export JEKYLL_GITHUB_TOKEN=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" > .bash_profile
-# download cacert.pem file in https://curl.haxx.se/ca/cacert.pem and following text add in .bash_profile
+# generate token in github develop setting/ Developer settings/Personal access tokens's page
+echo "export JEKYLL_GITHUB_TOKEN=ghp_v*********WmC" > .bash_profile
+# download cacert.pem file in https://curl.haxx.se/ca/cacert.pem add following text add in .bash_profile
 export SSL_CERT_FILE=/home/zelda/Downloads/ivanlevsky.github.io/cacert.pem
 source ~/.bash_profile
 # restart jekyll server
