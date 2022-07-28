@@ -73,6 +73,10 @@ export SSL_CERT_FILE=/home/zelda/Downloads/ivanlevsky.github.io/cacert.pem
 source ~/.bash_profile
 # restart jekyll server
 bundle exec jekyll serve --host 192.168.43.127 --port 4000
+# add this text in the top of .bash_profile
+if [ -f ~/.bashrc ];then
+     source .bashrc
+fi
 ```
 
 Reference:  

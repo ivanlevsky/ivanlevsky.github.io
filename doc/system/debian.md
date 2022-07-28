@@ -112,6 +112,14 @@ check ram usage and clear cache
 top
 echo 3 | sudo tee /proc/sys/vm/drop_caches
 ```
+command like 'll' not working
+```shell
+#check .bash_profile and add text below
+if [ -f ~/.bashrc ];then
+     source .bashrc
+fi
+```
+
 
 ### Reference:  
 [https://wiki.debian.org/ReduceDebian](https://wiki.debian.org/ReduceDebian)  
