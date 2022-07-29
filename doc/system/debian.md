@@ -107,6 +107,10 @@ find file in system
 ```shell
 find /folder/abc/...  -name *abc123*
 ```
+check disk space
+```shell
+df -TH
+```
 check ram usage and clear cache
 ```shell
 top
