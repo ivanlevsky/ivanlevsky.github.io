@@ -123,7 +123,17 @@ if [ -f ~/.bashrc ];then
      source .bashrc
 fi
 ```
-
+check date time
+```shell
+current_day=$(date +"%Y%m%d" 2>&1 | cat)
+echo $current_day
+current_time=$(date +"%H%M%S" 2>&1 | cat)
+echo $current_time
+```
+replace text in file
+```shell
+sed -i "s/text1/text2/g" filepath
+```
 
 ### Reference:  
 [https://wiki.debian.org/ReduceDebian](https://wiki.debian.org/ReduceDebian)  
